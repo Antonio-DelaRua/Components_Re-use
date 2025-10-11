@@ -1,2 +1,7 @@
+# componente Portfolio - Frontend Developer
 
-![Logo de mi proyecto](thumbnail.png)
+![Vista previa del portfolio](./assets/thumbnail.png)
+
+## 🚀 Sobre el Proyecto
+
+Pagina de inicio para portofolio de desarrollador front end , full resposive para tablet y moviles.
