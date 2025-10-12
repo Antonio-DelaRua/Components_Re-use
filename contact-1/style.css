@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+
+}
+
+
+
+
+/* ESTILOS PARA LA SECCIÓN DE CONTACTO */
+.contact-section {
+
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    padding-right: 3rem;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    padding-right: 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #8a2be2, #6600cc, #9400d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #a7a7a7;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ESTILOS CORREGIDOS PARA LA NORIA - LOGOS AL 100% */
+.wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.ferris-wheel {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.wheel:hover {
+    animation-play-state: paused;
+}
+
+.tech {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+}
+
+.tech-item {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    padding: 8px; /* REDUCIDO el padding para dar más espacio a la imagen */
+    overflow: hidden; /* Asegura que nada se salga del círculo */
+}
+
+.tech-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-logo {
+    width: 100% !important; /* OCUPA EL 100% del espacio disponible */
+    height: 100% !important; /* OCUPA EL 100% del espacio disponible */
+    object-fit: contain !important; /* Mantiene la proporción sin distorsionar */
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.center-dot {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+}
+
+.wheel-title {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.wheel-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #8a2be2, #6600cc, #9400d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wheel-title p {
+    color: #e0e7ff;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Estilos para el formulario */
+/* FORMULARIO COMPACTO - AJUSTADO PARA UNA SOLA VISTA */
+.form-wrapper {
+    background: url(./assets/gato.gif);
+    border-radius: 16px;
+    padding: 1.5rem; /* Reducido padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #07BDC4;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 35px;
+    max-height: 90vh; /* Limitar altura máxima */
+    overflow-y: auto; /* Scroll interno si es necesario */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem; /* Reducido espaciado */
+}
+
+.contact-form .form-label {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem; /* Reducido */
+    font-size: 0.85rem; /* Texto más compacto */
+    font-family: 'Orbitron', sans-serif;
+    display: block;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px; /* Bordes ligeramente más pequeños */
+    padding: 0.6rem; /* Padding reducido */
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Campos de texto normales - ALTURA REDUCIDA */
+.contact-form .form-control.input-field {
+    height: 42px; /* Reducido de 50px */
+}
+
+/* Área de mensaje más compacta */
+.contact-form .form-control.textarea-field {
+    min-height: 100px; /* Reducido de 150px */
+    resize: vertical;
+    max-height: 120px; /* Altura máxima */
+}
+
+.contact-form .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.contact-form .form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.75rem; /* Texto de error más pequeño */
+    margin-top: 0.3rem;
+}
+
+.invalid-feedback.show {
+    display: block;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem; /* Padding reducido */
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem; /* Texto más compacto */
+    margin-top: 0.3rem; /* Margen reducido */
+}
+
+.submit-btn:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:disabled {
+    background: #9ca3af;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Estilo para el título del formulario */
+.form-title {
+    text-align: center;
+    margin-bottom: 1rem; /* Reducido */
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem; /* Título más compacto */
+}
+
+/* Si aún es muy alto, puedes reducir más */
+@media (max-height: 700px) {
+    .form-wrapper {
+        padding: 1rem;
+        max-height: 85vh;
+    }
+    
+    .contact-form .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .contact-form .form-control.input-field {
+        height: 38px;
+    }
+    
+    .contact-form .form-control.textarea-field {
+        min-height: 80px;
+        max-height: 100px;
+    }
+    
+    .submit-btn {
+        padding: 0.6rem;
+    }
+}
+
+/* Botones de redes sociales */
+.contact-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-social-btn:hover::before {
+    left: 100%;
+}
+
+.contact-social-btn.linkedin {
+    color: #0077b5;
+    border-color: #0077b5;
+}
+
+.contact-social-btn.github {
+    color: #6e5494;
+    border-color: #6e5494;
+}
+
+.contact-social-btn.twitter {
+    color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.contact-social-btn.instagram {
+    color: #e4405f;
+    border-color: #e4405f;
+}
+
+.contact-social-btn.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5, 0 0 30px #0077b5;
+    transform: scale(1.1);
+}
+
+.contact-social-btn.github:hover {
+    background: #6e5494;
+    color: white;
+    box-shadow: 0 0 10px #6e5494, 0 0 20px #6e5494, 0 0 30px #6e5494;
+    transform: scale(1.1);
+}
+
+.contact-social-btn.twitter:hover {
+    background: #1da1f2;
+    color: white;
+    box-shadow: 0 0 10px #1da1f2, 0 0 20px #1da1f2, 0 0 30px #1da1f2;
+    transform: scale(1.1);
+}
+
+.contact-social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    box-shadow: 0 0 10px #e4405f, 0 0 20px #e4405f, 0 0 30px #e4405f;
+    transform: scale(1.1);
+}
+
+/* Animación de la noria */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 0;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .ferris-wheel {
+        width: 220px;
+        height: 220px;
+    }
+
+    .tech {
+        width: 50px;
+        height: 50px;
+    }
+
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+/* Filtros de Tecnología - VERSIÓN CORREGIDA */
+.tech-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.tech-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(30, 30, 40, 0.7);
+    border: 1px solid rgba(127, 66, 167, 0.3);
+    border-radius: 50px;
+    color: #d0d0d0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    min-width: auto;
+    flex-shrink: 0;
+}
+
+.tech-filter:hover {
+    background: rgba(127, 66, 167, 0.2);
+    border-color: rgba(127, 66, 167, 0.6);
+    transform: translateY(-2px);
+}
+
+.tech-filter.active {
+    background: linear-gradient(135deg, #7f42a7, #5300a0);
+    border-color: rgba(127, 66, 167, 0.8);
+    color: white;
+    box-shadow: 0 5px 15px rgba(127, 66, 167, 0.4);
+}
+
+.tech-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tech-filter i {
+    font-size: 0.9rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE PARA FILTROS */
+@media (max-width: 1024px) {
+    .tech-filters {
+        gap: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .tech-filter {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .tech-logo {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-filters {
+        gap: 0.5rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tech-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tech-filter {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+    }
+
+    .tech-logo {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tech-filter i {
+        font-size: 0.8rem;
+        width: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-filters {
+        gap: 0.4rem;
+    }
+
+    .tech-filter {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    /* Acortar textos largos en móviles muy pequeños */
+    .tech-filter[data-tech="javascript"] {
+        font-size: 0.65rem;
+        padding: 0.45rem 0.7rem;
+    }
+
+    .tech-filter[data-tech="typescript"] {
+        font-size: 0.65rem;
+        padding: 0.45rem 0.7rem;
+    }
+}
+
+/* Estados de focus para accesibilidad */
+.tech-filter:focus {
+    outline: 2px solid rgba(127, 66, 167, 0.5);
+    outline-offset: 2px;
+}
+
+/* Mejora el contraste para modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .tech-filter {
+        background: rgba(40, 40, 50, 0.8);
+    }
+
+    .tech-filter.active {
+        background: linear-gradient(135deg, #8a52b8, #5a00b0);
+    }
+}

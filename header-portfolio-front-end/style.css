@@ -290,6 +290,7 @@ main {
         scale: 0.8;
         top: -20%;
         right: 1%;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
 
     }
 }
